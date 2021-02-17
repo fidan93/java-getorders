@@ -1,7 +1,6 @@
 package com.lambdaschool.orders.repositories;
 
 import com.lambdaschool.orders.models.Order;
-import com.lambdaschool.orders.views.AdvanceAmount;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -14,6 +13,6 @@ public interface OrderRepository extends CrudRepository<Order,Long>
         "FROM orders o LEFT JOIN customers c " +
         "ON o.custcode = c.custcode " +
         "WHERE o.advanceamount>0",nativeQuery = true)
-    List<AdvanceAmount> getWithAdvanceAmountBiggerThanZero();
+    List<Order> getWithAdvanceAmountBiggerThanZero();
 
 }

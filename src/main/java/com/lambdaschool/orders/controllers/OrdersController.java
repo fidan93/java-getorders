@@ -2,7 +2,6 @@ package com.lambdaschool.orders.controllers;
 
 import com.lambdaschool.orders.models.Order;
 import com.lambdaschool.orders.services.OrderServices;
-import com.lambdaschool.orders.views.AdvanceAmount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +29,7 @@ public class OrdersController
     @GetMapping(value = "/advanceamount")
     public ResponseEntity<?> getAdvanceAmount()
     {
-        List<AdvanceAmount> advanceAmounts = orderServices.getAdvanceAmount();
+        List<Order> advanceAmounts = orderServices.getAdvanceAmount();
         return new ResponseEntity<>(advanceAmounts,HttpStatus.OK);
     }
 }

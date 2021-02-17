@@ -2,7 +2,6 @@ package com.lambdaschool.orders.services;
 
 import com.lambdaschool.orders.models.Order;
 import com.lambdaschool.orders.repositories.OrderRepository;
-import com.lambdaschool.orders.views.AdvanceAmount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,9 +32,9 @@ public class OrderServiceImpl implements OrderServices
     }
 
     @Override
-    public List<AdvanceAmount> getAdvanceAmount()
+    public List<Order> getAdvanceAmount()
     {
-      List<AdvanceAmount> advanceAmounts = orderRepository.getWithAdvanceAmountBiggerThanZero();
-      return advanceAmounts;
+      List<Order> orderList = orderRepository.getWithAdvanceAmountBiggerThanZero();
+      return orderList;
     }
 }
